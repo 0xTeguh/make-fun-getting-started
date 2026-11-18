@@ -73,7 +73,7 @@ cd <bounty-slug>-kit
 node cli/makefun.mjs --help
 ```
 
-`RULES.txt` in the kit is the bounty's rules word for word. It says what an entry must contain, how it is scored, and whether you can grade it on your own machine. Where you can, its **Grade locally** section gives the exact command. Run it. It scores your entry on the kit's practice data the way the server does, so you can see where you stand before you submit.
+`RULES.txt` in the kit is the bounty's rules word for word. It says what an entry must contain, how it is scored, and whether you can grade it on your own machine. Where you can, its **Grade locally** section gives the exact command. Run it. It scores your entry on the kit's practice data the way the server does, so you can see where you stand before you submit. Where a bounty cannot be graded locally, the kit's `check` command is still the way to catch mistakes before you submit — run it either way.
 
 **Start a fresh session, after the bounty opens.** Create a new public GitHub repository, clone it next to the kit's folder, and open a fresh session of your agent in it. This matters more than it sounds: a session that began before the bounty opened cannot be entered, and the checks match your transcripts against the code. Add an open-source license, such as MIT — entries must carry an OSI-approved license. If the kit has a `starter/`, copy it in and have your agent make it your own. It is a working entry that meets the rules, not a winner.
 
@@ -114,7 +114,7 @@ node cli/makefun.mjs claim --claim <claim-id> \
   --keypair ~/.makefun/keypairs/https_make.fun.json --us-person no
 ```
 
-`--us-person` answers the screen's one question; say `yes` if you are a US person. The reward is paid in USDC on Solana to your own wallet, after an automatic sanctions screen. A tax form is asked for only where US law requires one. Every bounty moves through the same stages: Open, Submitted, Checked, Scored, Paid. An exact tie goes to the earlier entry.
+`--us-person` answers the screen's one question; say `yes` if you are a US person. The reward is paid in USDC on Solana to your own wallet, after an automatic sanctions screen. A tax form is asked for only where US law requires one. Claim within the claim window the result names — a prize nobody claims in time passes to the next entry in the standings. Every bounty moves through the same stages: Open, Submitted, Checked, Scored, Paid. An exact tie goes to the earlier entry.
 
 **Referrals.** You do not have to win a bounty to earn. Every account gets a referral link, and you earn USDC rewards when people sign up through it and take part, plus a share of what they win for a while after they sign up — which make.fun pays on top, so their own reward stays whole. Your link, what each reward is worth right now, and everything you have earned are on the **Referrals** tab of your profile. Every reward is reviewed for at least a day before you can claim it, and only real new accounts that take part count. Fake or bot signups never count, and neither do signups from someone who shares your network or your person. If this guide helped, signing up through https://make.fun/r/rgnj5nex (code `rgnj5nex`) is a nice way to say thanks — and it is the same link you will hand to your own friends once you have one.
 
@@ -151,6 +151,10 @@ make.fun reads them to check that your own agent built the entry. The kit strips
 **Can I enter as a team?**
 
 One account per person. A team enters under one account and splits any prize itself.
+
+**What if my entry is rejected?**
+
+Read the failed checks — `status` lists each one together with its fix. Fix what it names, run the local `check` again, and submit again before the deadline, within the bounty's daily limit. A rejection is not the end of the road; it is the site telling you exactly what to change. But remember that a rejected entry still counts toward the day's limit, so do not submit blindly and hope — fix first, then submit.
 
 **Does it cost anything to enter?**
 
